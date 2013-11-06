@@ -37,8 +37,9 @@
     <StartupObject>BDDIntro.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bricks">
-      <HintPath>..\..\main\FunctionalTestAutomationFramework\HuxleyBDD\lib\White_Bin_0.2.1\Bricks.dll</HintPath>
+    <Reference Include="Bricks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=83a26c96fb92c77f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Bricks.dll</HintPath>
     </Reference>
     <Reference Include="Bricks.RuntimeFramework">
       <HintPath>..\..\main\FunctionalTestAutomationFramework\HuxleyBDD\lib\White_Bin_0.2.1\Bricks.RuntimeFramework.dll</HintPath>
@@ -59,10 +60,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationTypes" />
-    <Reference Include="White.Core">
-      <HintPath>..\..\main\FunctionalTestAutomationFramework\HuxleyBDD\lib\White_Bin_0.2.1\White.Core.dll</HintPath>
+    <Reference Include="White.Core, Version=0.2.1.0, Culture=neutral, PublicKeyToken=2672efbf3e161801, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\White.Core.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="Xstream.Core, Version=1.0.3552.35177, Culture=neutral, PublicKeyToken=5a34ce33a538d84f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Xstream.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -70,6 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="lib\Bricks.dll" />
+    <Content Include="lib\Bricks.RuntimeFramework.dll" />
+    <Content Include="lib\Castle.Core.dll" />
+    <Content Include="lib\Castle.DynamicProxy2.dll" />
+    <Content Include="lib\White.Core.dll" />
+    <Content Include="lib\Xstream.Core.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
