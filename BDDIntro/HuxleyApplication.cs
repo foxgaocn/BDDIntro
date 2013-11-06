@@ -19,6 +19,11 @@ namespace BDDIntro
 			app = Application.Launch(processInfo);
 		}
 
+		public static void Stop()
+		{
+			app.Kill();
+		}
+
 		public static MainForm MainForm
 		{
 			get
