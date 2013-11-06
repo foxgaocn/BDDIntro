@@ -71,8 +71,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\MainForm.cs" />
+    <Compile Include="Forms\SignOnForm.cs" />
+    <Compile Include="HuxleyApplication.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
