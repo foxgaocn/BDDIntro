@@ -21,6 +21,8 @@ namespace BDDIntro
 			var cancelButton = signOnWindow.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, "btnCancel"));
 			
 			Mouse.Instance.Click(cancelButton.Current.BoundingRectangle.TopLeft);
+
+			process.Kill();
 		}
 	}
 }
