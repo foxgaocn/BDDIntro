@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Threading;
-using System.Windows.Automation;
-using System.Windows.Input;
-using White.Core.InputDevices;
+using White.Core;
 using White.Core.UIItems;
+using White.Core.UIItems.Finders;
+using White.Core.UIItems.WPFUIItems;
 
 namespace BDDIntro
 {
@@ -11,18 +11,14 @@ namespace BDDIntro
 	{
 		static void Main(string[] args)
 		{
-			var process = Process.Start(@"C:\projects\main\Build_Output\Debug\Huxley.Application.exe", "-f myob-ar://localhost:6962/Default/_tmp/BDDTest.myox");
+			var processInfo = new ProcessStartInfo(@"C:\projects\main\Build_Output\Debug\Huxley.Application.exe", "-f myob-ar://localhost:6962/Default/_tmp/BDDTest.myox");
+			var app = Application.Launch(processInfo);
 			Thread.Sleep(10000);
+			var mainWindow = app.GetWindow("MYOB AccountRight Standard");
+			var signOnWindow = new UIItem(mainWindow.GetElement(SearchCriteria.ByAutomationId("UserLogin")), mainWindow.ActionListener); 
 			
-			var mainWindow = AutomationElement.FromHandle(process.MainWindowHandle);
-			
-			var signOnWindow = mainWindow.FindFirst(TreeScope.Children, new PropertyCondition(AutomationElement.AutomationIdProperty, "UserLogin"));
-			
-			var cancelButton = signOnWindow.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.AutomationIdProperty, "btnCancel"));
-			
-			Mouse.Instance.Click(cancelButton.Current.BoundingRectangle.TopLeft);
-
-			process.Kill();
+			var cancelButton = signOnWindow.Get(SearchCriteria.ByAutomationId("btnCancel"));
+			cancelButton.Click();
 		}
 	}
 }

@@ -83,6 +83,7 @@
     <Content Include="lib\Bricks.RuntimeFramework.dll" />
     <Content Include="lib\Castle.Core.dll" />
     <Content Include="lib\Castle.DynamicProxy2.dll" />
+    <Content Include="lib\log4net.dll" />
     <Content Include="lib\White.Core.dll" />
     <Content Include="lib\Xstream.Core.dll" />
   </ItemGroup>
